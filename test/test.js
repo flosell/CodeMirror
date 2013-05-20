@@ -1401,3 +1401,10 @@ testCM("change_removedText", function(cm) {
   eq(removedText[0].join("\n"), "abc\nd");
   eq(removedText[1].join("\n"), "");
 });
+
+testCM("cr_newline_setValue", function(cm) {
+  var text = "hello\r\nworld";
+  cm.setValue(text); 
+  var newText = cm.getValue(); 
+  eq(text,newText)
+})
